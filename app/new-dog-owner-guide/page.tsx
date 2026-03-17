@@ -426,7 +426,7 @@ export default function NewDogOwnerGuide() {
                   href:        '/dog-symptom-guide',
                   icon:        '🩺',
                   title:       'Dog Symptom Guide',
-                  description: 'Know what's normal — and what needs a vet visit.',
+                  description: "Know what's normal — and what needs a vet visit.",
                 },
                 {
                   href:        '/dog-vet-cost-guide',

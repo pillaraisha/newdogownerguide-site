@@ -19,7 +19,7 @@ import ArticleProtectionCTA from '@/components/ArticleProtectionCTA'
 import EmailSignup from '@/components/EmailSignup'
 
 export const metadata = buildMetadata({
-  title: 'Dog Breed Health Guide: Know Your Breed's Risks – New Dog Owner Guide',
+  title: "Dog Breed Health Guide: Know Your Breed's Risks – New Dog Owner Guide",
   description:
     'Breed-specific health guides covering genetic conditions, common predispositions, and what to watch for in large, small, flat-faced, and working dog breeds.',
   canonical: '/dog-breed-health-guide',

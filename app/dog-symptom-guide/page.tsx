@@ -423,7 +423,7 @@ export default function DogSymptomGuide() {
                   href:        '/dog-breed-health-guide',
                   icon:        '🐕',
                   title:       'Dog Breed Health Guide',
-                  description: 'Health risks specific to your dog's breed.',
+                  description: "Health risks specific to your dog's breed.",
                 },
                 {
                   href:        '/pet-insurance-guide',
