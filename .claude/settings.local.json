@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"C:/Users/nicol/OneDrive/Desktop/newdogownerguide-site/lib/analytics/index.ts\":*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(where npm:*)",
+      "Bash(where node:*)",
+      "Bash(where npm.cmd)",
+      "Bash(where npx.cmd)",
+      "Bash(echo \"PATH: $PATH\")",
+      "Bash(\"/c/Program Files/nodejs/node.exe\" \"/c/Program Files/nodejs/node_modules/npm/bin/npm-cli.js\" install)",
+      "Bash(cmd.exe /C \"set PATH=C:\\\\Program Files\\\\nodejs;%PATH% && npm install\")",
+      "Bash(cmd.exe /C \"cd /d C:\\\\Users\\\\nicol\\\\OneDrive\\\\Desktop\\\\newdogownerguide-site && set PATH=C:\\\\Program Files\\\\nodejs;%PATH% && npm install 2>&1\")",
+      "Bash(%PATH% cd:*)",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem ''C:\\\\Users\\\\nicol\\\\OneDrive\\\\Desktop\\\\newdogownerguide-site\\\\node_modules\\\\next'' | Select-Object -First 15 | Format-Table Name\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem ''C:\\\\Users\\\\nicol\\\\OneDrive\\\\Desktop\\\\newdogownerguide-site\\\\node_modules'' | Select-Object -First 20 | Format-Table Name\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem ''C:\\\\Users\\\\nicol\\\\OneDrive\\\\Desktop\\\\newdogownerguide-site\\\\node_modules\\\\next'' -Name | Select-Object -First 10\")",
+      "Bash(powershell.exe -NoProfile -Command \"Get-ChildItem ''C:\\\\Users\\\\nicol\\\\OneDrive\\\\Desktop\\\\newdogownerguide-site\\\\node_modules\\\\next\\\\dist\\\\bin'' -Name\")",
+      "Bash(powershell.exe -NoProfile -Command \"Remove-Item -Recurse -Force ''C:\\\\Users\\\\nicol\\\\OneDrive\\\\Desktop\\\\newdogownerguide-site\\\\.next\\\\cache'' -ErrorAction SilentlyContinue; Write-Host ''Cache cleared''\")",
+      "Bash(node -e \":*)",
+      "Bash(node -e \"const fs=require\\(''fs''\\),path=require\\(''path''\\),dir=''content/articles'';fs.readdirSync\\(dir\\).filter\\(f=>f.endsWith\\(''.mdx''\\)\\).forEach\\(f=>{const fp=path.join\\(dir,f\\),orig=fs.readFileSync\\(fp,''utf8''\\),updated=orig.replace\\(/ \\\\{#[a-z0-9-]+\\\\}/g,''''\\);if\\(orig!==updated\\){fs.writeFileSync\\(fp,updated,''utf8''\\);console.log\\(''Fixed:'',f\\)}}\\);console.log\\(''Done''\\)\")",
+      "Bash(export PATH=\"/c/Program Files/nodejs:$PATH\")",
+      "Bash(powershell.exe -Command \"cd ''C:/Users/nicol/OneDrive/Desktop/newdogownerguide-site''; Get-ChildItem ''content/articles/*.mdx'' | ForEach-Object { $c = Get-Content $_.FullName -Raw; $n = $c -replace '' \\\\{#[a-z0-9-]+\\\\}'',''''; if \\($c -ne $n\\) { Set-Content -Path $_.FullName -Value $n -NoNewline; Write-Output \\(''Fixed: '' + $_.Name\\) } }; Write-Output ''Done''\")",
+      "Bash(grep -E \"\\\\.\\(tsx?|mdx?|css|sql|json\\)$\")",
+      "Bash(find C:UsersnicolOneDriveDesktopnewdogownerguide-site -name *pet-insurance-guide* -o -name pet-insurance-guide.tsx)"
+    ]
+  }
+}

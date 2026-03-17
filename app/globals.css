@@ -1,0 +1,154 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS custom properties ─────────────────────────────────────────────── */
+:root {
+  --brand-primary:   #e07820;
+  --brand-secondary: #3e9142;
+
+  /* Editorial background palette */
+  --color-bg:        #fafaf8;   /* warm off-white — body background */
+  --color-bg-alt:    #f4f3f0;   /* warm light-gray — alternate sections */
+  --color-text:      #1c1917;   /* warm near-black — primary text */
+  --color-text-muted:#78716c;   /* stone-500 — secondary text */
+
+  /* Spacing */
+  --section-y: 5rem;
+}
+
+/* ── Base resets ────────────────────────────────────────────────────────── */
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    @apply font-sans;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Focus ring for accessibility */
+  *:focus-visible {
+    outline: 2px solid #e07820;
+    outline-offset: 3px;
+  }
+
+  /* Remove list styles on nav elements */
+  nav ul,
+  nav ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  img,
+  video {
+    @apply max-w-full h-auto;
+  }
+}
+
+/* ── Component layer ────────────────────────────────────────────────────── */
+@layer components {
+  /* Reusable section wrapper */
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24;
+  }
+
+  /* Pill badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
+  }
+
+  .badge-brand {
+    @apply badge bg-brand-100 text-brand-700;
+  }
+
+  .badge-forest {
+    @apply badge bg-forest-100 text-forest-700;
+  }
+
+  /* CTA buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-brand-500 hover:bg-brand-600 active:bg-brand-700
+           text-white font-bold text-sm
+           px-6 py-3 rounded-xl
+           shadow-brand hover:shadow-brand-hover
+           transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-white hover:bg-neutral-50 active:bg-neutral-100
+           text-neutral-800 hover:text-neutral-900 font-semibold text-sm
+           border border-neutral-200 hover:border-neutral-300
+           px-6 py-3 rounded-xl
+           shadow-sm hover:shadow
+           transition-all duration-200;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+           text-brand-600 hover:text-brand-700 font-semibold text-sm
+           transition-colors duration-150;
+  }
+
+  /* Card shell */
+  .card {
+    @apply bg-white rounded-2xl
+           border border-neutral-100
+           shadow-card hover:shadow-card-hover
+           overflow-hidden transition-shadow duration-200;
+  }
+
+  /* Prose wrapper – wraps MDX article content.
+     Link hover underline is handled by the typography config's a['&:hover'] rule. */
+  .article-prose {
+    @apply prose prose-lg max-w-none
+           prose-headings:font-serif
+           prose-a:text-brand-600 prose-a:no-underline
+           prose-blockquote:not-italic
+           prose-img:rounded-xl prose-img:shadow-sm;
+  }
+
+  /* Sticky nav shadow on scroll (applied via JS) */
+  .nav-scrolled {
+    @apply shadow-sm backdrop-blur-sm;
+    background-color: rgba(250, 250, 248, 0.95);
+  }
+}
+
+/* ── Utility layer ──────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .section-y {
+    padding-top: var(--section-y);
+    padding-bottom: var(--section-y);
+  }
+
+  /* Editorial warm section backgrounds */
+  .bg-page {
+    background-color: var(--color-bg);
+  }
+
+  .bg-page-alt {
+    background-color: var(--color-bg-alt);
+  }
+
+  /* Section eyebrow — editorial text label above section headings.
+     Use instead of badge-brand pills for section headers so orange
+     is reserved for CTA buttons only. */
+  .section-eyebrow {
+    @apply block text-xs font-bold uppercase tracking-[0.1em] text-brand-500 mb-3;
+  }
+
+  .section-eyebrow-light {
+    @apply block text-xs font-bold uppercase tracking-[0.1em] text-brand-300 mb-3;
+  }
+}
