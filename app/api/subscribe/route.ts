@@ -4,7 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { email, source, utm_source, utm_medium, utm_campaign } = body
+    const { email, source } = body
 
     if (!email || typeof email !== 'string') {
       return NextResponse.json({ error: 'Email is required.' }, { status: 400 })
@@ -18,12 +18,11 @@ export async function POST(request: NextRequest) {
 
     const supabase = await createClient()
 
+    // Insert only the columns that exist in email_subscribers:
+    // id (auto), email, signup_source, created_at (auto)
     const { error } = await supabase.from('email_subscribers').insert({
-      email:        email.toLowerCase().trim(),
+      email:         email.toLowerCase().trim(),
       signup_source: source ?? 'unknown',
-      utm_source:   utm_source ?? null,
-      utm_medium:   utm_medium ?? null,
-      utm_campaign: utm_campaign ?? null,
     })
 
     if (error) {

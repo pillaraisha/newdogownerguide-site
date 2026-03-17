@@ -215,7 +215,7 @@ export default function HomePage() {
         body="Everything a new dog owner needs to know — vet costs, health basics, insurance timing, and money-saving tips — in one printable checklist. Join thousands of dog owners who already have it."
         buttonText="Send Me the Free Checklist"
         successMessage="Thanks! You'll receive helpful dog owner tips soon."
-        source="homepage"
+        source="homepage_checklist"
       />
     </>
   )
