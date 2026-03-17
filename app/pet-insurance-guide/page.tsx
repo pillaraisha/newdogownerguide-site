@@ -17,8 +17,8 @@ import TopicCard from '@/components/TopicCard'
 import HubDiscovery from '@/components/HubDiscovery'
 import ArticleProtectionCTA from '@/components/ArticleProtectionCTA'
 import EmailSignup from '@/components/EmailSignup'
+import FetchTrackedLink from '@/components/FetchTrackedLink'
 import { fetchLink } from '@/lib/config'
-import { trackFetchClick } from '@/lib/analytics/events'
 
 export const metadata = buildMetadata({
   title: 'Pet Insurance Guide: How It Works, What It Covers & How to Choose – New Dog Owner Guide',
@@ -154,9 +154,9 @@ export default function PetInsuranceGuide() {
                     </li>
                   ))}
                 </ul>
-                <a
+                <FetchTrackedLink
                   href={fetchLink.articleMid}
-                  onClick={() => trackFetchClick('articleMid')}
+                  placement="articleMid"
                   target="_blank"
                   rel="noopener noreferrer sponsored"
                   className="inline-flex items-center gap-2 rounded-xl bg-white text-brand-600 font-semibold text-sm px-6 py-3 hover:bg-brand-50 transition-colors"
@@ -165,7 +165,7 @@ export default function PetInsuranceGuide() {
                   <svg className="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
                   </svg>
-                </a>
+                </FetchTrackedLink>
                 <p className="mt-3 text-xs text-white/40">
                   Sponsored affiliate link.{' '}
                   <Link href="/legal/affiliate-disclosure" className="underline hover:text-white/60 transition-colors">
