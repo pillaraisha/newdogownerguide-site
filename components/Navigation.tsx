@@ -10,7 +10,7 @@ export default function Navigation() {
   const [menuOpen,  setMenuOpen]  = useState(false)
   const [catOpen,   setCatOpen]   = useState(false)
   const [scrolled,  setScrolled]  = useState(false)
-  const catRef = useRef<HTMLDivElement>(null)
+  const catRef = useRef<HTMLLIElement>(null)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
