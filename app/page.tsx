@@ -27,9 +27,9 @@ const HEALTH_CONCERNS = [
   { emoji: '🦿', label: 'My Dog Is Limping',        href: '/articles/dog-limping-suddenly' },
   { emoji: '🤢', label: 'My Dog Is Vomiting',        href: '/articles/emergency-vet-visit-cost' },
   { emoji: '🍫', label: 'My Dog Ate Something Bad',  href: '/articles/dog-intestinal-blockage-surgery-cost' },
-  { emoji: '🍽️', label: 'My Dog Is Not Eating',     href: '/category/dog-health' },
-  { emoji: '💩', label: 'My Dog Has Diarrhea',       href: '/category/dog-health' },
-  { emoji: '😴', label: 'My Dog Is Very Lethargic',  href: '/category/dog-health' },
+  { emoji: '🍽️', label: 'My Dog Is Not Eating',     href: '/dog-symptom-guide' },
+  { emoji: '💩', label: 'My Dog Has Diarrhea',       href: '/dog-symptom-guide' },
+  { emoji: '😴', label: 'My Dog Is Very Lethargic',  href: '/dog-symptom-guide' },
 ]
 
 export default function HomePage() {
