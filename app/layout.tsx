@@ -21,12 +21,18 @@ const geistMono = Geist_Mono({
 })
 
 /* ── Site-wide metadata ─────────────────────────────────────────────────── */
-export const metadata: Metadata = buildMetadata({
-  title: 'New Dog Owner Guide – Expert Advice for First-Time Dog Parents',
-  description:
-    'Science-backed guides, research-backed advice, and real-owner insights to help you give your new dog the best possible start.',
-  canonical: '/',
-})
+export const metadata: Metadata = {
+  ...buildMetadata({
+    title: 'New Dog Owner Guide – Expert Advice for First-Time Dog Parents',
+    description:
+      'Science-backed guides, research-backed advice, and real-owner insights to help you give your new dog the best possible start.',
+    canonical: '/',
+  }),
+  // Pinterest domain verification
+  other: {
+    'p:domain_verify': '491a8e5377496a269ea13135a1b7e8ca',
+  },
+}
 
 export const viewport: Viewport = {
   themeColor: '#e07820',
