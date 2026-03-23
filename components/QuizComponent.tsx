@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { fetchLink } from '@/lib/config'
 import {
@@ -45,6 +46,7 @@ function progressPercent(step: Step): number {
 // ── Component ─────────────────────────────────────────────────────────────────
 
 export default function QuizComponent() {
+  const router = useRouter()
   const [step,       setStep]       = useState<Step>('intro')
   const [answers,    setAnswers]    = useState<Answers>({ petType: null, age: null, size: null, zip: '', email: '' })
   const [submitting, setSubmitting] = useState(false)
@@ -87,6 +89,8 @@ export default function QuizComponent() {
         risk_level: data.result?.level ?? 'unknown',
       })
       trackEmailSignup('quiz')
+      // Redirect to the full results page only after a successful submission
+      router.push('/quiz-results')
     } catch {
       setError('Network error. Please try again.')
     }
